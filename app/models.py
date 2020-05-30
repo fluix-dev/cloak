@@ -146,7 +146,7 @@ class FormField(models.Model):
         ordering = ["order"]
 
     def __str__(self):
-        return self.question
+        return "Form Field"
 
 
 class Response(models.Model):

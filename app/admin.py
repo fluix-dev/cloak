@@ -74,5 +74,60 @@ class FormAdmin(admin.ModelAdmin):
         )
 
 
-admin.site.register(Response)
-admin.site.register(FormFieldResponse)
+class FormFieldResponse(admin.StackedInline):
+    model = FormFieldResponse
+    extra = 0
+    readonly_fields = ["question"]
+    fields = (
+        "question",
+        "content",
+    )
+
+    def question(self, obj):
+        return obj.form_field.question
+
+
+@admin.register(Response)
+class ResponseAdmin(admin.ModelAdmin):
+    list_display = (
+        "form",
+        "user_hidden",
+        "name_hidden",
+        "email_hidden",
+        "submission_datetime",
+    )
+
+    def user_hidden(self, obj):
+        return "[SECRET]" if obj.status != "A" else obj.user
+
+    user_hidden.short_description = "User"
+
+    def name_hidden(self, obj):
+        return "[SECRET]" if obj.status != "A" else obj.name
+
+    name_hidden.short_description = "Name"
+
+    def email_hidden(self, obj):
+        return "[SECRET]" if obj.status != "A" else obj.email
+
+    email_hidden.short_description = "Email"
+
+    def get_readonly_fields(self, request, obj):
+        readonly_fields = [
+            "submission_datetime",
+        ]
+        if obj and obj.status == "A":
+            readonly_fields += ["status"]
+        return readonly_fields
+
+    fieldsets = (
+        ("Connections", {"fields": ("form", "user",),},),
+        (
+            "Response",
+            {"fields": ("name", "email", "submission_datetime", "status",),},
+        ),
+    )
+
+    inlines = [
+        FormFieldResponse,
+    ]

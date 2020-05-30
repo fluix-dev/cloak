@@ -5,6 +5,7 @@ black==19.10b0
 click==7.1.2
 Django==3.0.6
 django-admin-interface==0.12.2
+django-admin-sortable2==0.7.6
 django-colorfield==0.3.0
 django-flat-responsive==2.0
 django-flat-theme==1.1.4

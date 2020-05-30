@@ -73,7 +73,11 @@ class Form(models.Model):
     )
 
     def clean(self):
-        if self.is_open and self.close_datetime <= timezone.now():
+        if (
+            self.is_open
+            and self.close_datetime
+            and self.close_datetime <= timezone.now()
+        ):
             raise ValidationError("Auto-Close Date must be in the future.")
 
     def __str__(self):

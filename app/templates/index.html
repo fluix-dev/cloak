@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+	<link rel="icon" type="image/png" href="{% static 'img/cloak-favicon.png' %}">
+</head>
+<body class="no-select">
+<header>
+	<img class="logo no-select" src="{% static 'img/cloakLogo.png' %}" draggable="false"/>
+	<a class="login no-select" href="{% url 'admin:index' %}">LOGIN</a> 
+</header>
+<section class="land">
+	<img class="bkgd no-select" src="{% static 'img/cloudPattern.png' %}" draggable="false"/>
+	<div class="logo-cntr">
+		<img class="logo-text no-select" src="{% static 'img/cloak-words.png' %}" draggable="false"/>
+	</div>
+</section>
+
+</body>
+</html>

@@ -109,6 +109,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+Scripts/*
+include/*
+pyvenv.cfg
 
 # Spyder project settings
 .spyderproject

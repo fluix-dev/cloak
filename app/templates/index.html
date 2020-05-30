@@ -7,16 +7,15 @@
 	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
 	<link rel="icon" type="image/png" href="{% static 'img/cloak-favicon.png' %}">
 </head>
-<body>
+<body class="no-select">
 <header>
-	<img class="logo" src="{% static 'img/cloakLogo.png' %}" />
-	<a class="login" href="{% url 'admin:index' %}">LOGIN</a> 
-	<!-- src -->
+	<img class="logo no-select" src="{% static 'img/cloakLogo.png' %}" draggable="false"/>
+	<a class="login no-select" href="{% url 'admin:index' %}">LOGIN</a> 
 </header>
 <section class="land">
-	<img class="bkgd" src="{% static 'img/cloudPattern.png' %}" />
+	<img class="bkgd no-select" src="{% static 'img/cloudPattern.png' %}" draggable="false"/>
 	<div class="logo-cntr">
-		<img class="logo-text" src="{% static 'img/cloak-words.png' %}" />
+		<img class="logo-text no-select" src="{% static 'img/cloak-words.png' %}" draggable="false"/>
 	</div>
 </section>
 

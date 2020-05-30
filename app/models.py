@@ -2,9 +2,11 @@ import secrets
 import uuid
 
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
+from django.utils import timezone
 
 
 class Form(models.Model):
@@ -69,6 +71,10 @@ class Form(models.Model):
         help_text="Securely randomly generated base 64 encoded bytes used for "
         + "form url.",
     )
+
+    def clean(self):
+        if self.is_open and self.close_datetime <= timezone.now():
+            raise ValidationError("Auto-Close Date must be in the future.")
 
 
 @receiver(pre_save, sender=Form)

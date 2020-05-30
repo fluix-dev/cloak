@@ -139,6 +139,10 @@ class FormField(models.Model):
         + "per line. This field will be ignored for fields that aren't "
         + "Multiple Choice ones.",
     )
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    class Meta(object):
+        ordering = ["order"]
 
     def __str__(self):
         return self.question

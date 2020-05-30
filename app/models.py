@@ -26,7 +26,7 @@ class Form(models.Model):
     name = models.CharField(
         verbose_name="Name", max_length=255, help_text="The name of this form."
     )
-    description = models.CharField(
+    description = models.TextField(
         verbose_name="Description",
         max_length=1024,
         blank=True,
@@ -112,7 +112,7 @@ class FormField(models.Model):
         max_length=255,
         help_text="Question displayed to the user.",
     )
-    description = models.CharField(
+    description = models.TextField(
         verbose_name="Description",
         max_length=1024,
         help_text="A description that will be shown under the question in "
@@ -175,7 +175,7 @@ class FormFieldResponse(models.Model):
         related_name="fields",
         on_delete=models.CASCADE,
     )
-    content = models.CharField(
+    content = models.TextField(
         max_length=8191,
         verbose_name="Content",
         help_text="A JSON data object for storing response data.",

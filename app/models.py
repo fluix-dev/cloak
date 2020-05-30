@@ -128,6 +128,7 @@ class FormField(models.Model):
     description = models.TextField(
         verbose_name="Description",
         max_length=1024,
+        blank=True,
         help_text="A description that will be shown under the question in "
         + "smaller text.",
     )

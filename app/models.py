@@ -76,6 +76,9 @@ class Form(models.Model):
         if self.is_open and self.close_datetime <= timezone.now():
             raise ValidationError("Auto-Close Date must be in the future.")
 
+    def __str__(self):
+        return self.name
+
 
 @receiver(pre_save, sender=Form)
 def generate_form_id(sender, instance, **kwargs):
@@ -125,6 +128,9 @@ class FormField(models.Model):
         + "smaller text.",
     )
 
+    def __str__(self):
+        return self.question
+
 
 class Response(models.Model):
     form = models.ForeignKey(
@@ -138,6 +144,7 @@ class Response(models.Model):
         verbose_name="User",
         related_name="responses",
         null=True,
+        blank=True,
         on_delete=models.CASCADE,
         help_text="The user who submitted this response. null if no account "
         + "was used.",
@@ -161,11 +168,15 @@ class Response(models.Model):
     status = models.CharField(
         verbose_name="Status",
         max_length=1,
+        choices=STATUS_CHOICES,
         default="P",
         help_text="Status of this response. Mark as accepted to view secrets "
         + "and send submitter an acceptance email. Once marked as accepted, "
         + "the status cannot be changed.",
     )
+
+    def __str__(self):
+        return "Form Response (%d)" % self.pk
 
 
 class FormFieldResponse(models.Model):
@@ -189,3 +200,6 @@ class FormFieldResponse(models.Model):
 
     def parse_content():
         pass
+
+    def __str__(self):
+        return self.form_field.question

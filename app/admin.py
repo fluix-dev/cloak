@@ -12,9 +12,15 @@ class FormFieldInline(admin.StackedInline):
             {
                 "fields": (
                     ("input_type", "question"),
-                    "description",
                     ("is_required", "is_secret"),
                 ),
+            },
+        ),
+        (
+            "Additional",
+            {
+                "fields": ("description", "multiple_choices",),
+                "classes": ("collapse",),
             },
         ),
     )

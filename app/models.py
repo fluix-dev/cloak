@@ -127,6 +127,14 @@ class FormField(models.Model):
         help_text="A description that will be shown under the question in "
         + "smaller text.",
     )
+    multiple_choices = models.TextField(
+        verbose_name="Multiple Choice Choices",
+        max_length=1024,
+        blank=True,
+        help_text="The choices for a multiple choice field. Include one option "
+        + "per line. This field will be ignored for fields that aren't "
+        + "Multiple Choice ones.",
+    )
 
     def __str__(self):
         return self.question

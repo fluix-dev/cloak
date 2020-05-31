@@ -15,6 +15,8 @@
                 <label class="cloak-label" for="{{ field.pk }}">{{ field.question }}</label>
                 {% if field.description %} 
                     <small class="form-text text-muted">{{ field.description }}</small>
+                {% else %}
+                    <br>
                 {% endif %}
 
                 {% if field.input_type == 'S' %}
@@ -41,10 +43,14 @@
                     </select>                
                 {% elif field.input_type == 'N' %}
                     {% if field.is_required %}
-                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" max="1000000" min="-1000000" required>
+                        <input type="number" class="form-control cloak-input cloak-num" name="{{ field.pk }}" max="1000000" min="-1000000" required>
                     {% else %}
-                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" max="1000000" min="-1000000" >
+                        <input type="number" class="form-control cloak-input cloak-num" name="{{ field.pk }}" max="1000000" min="-1000000" >
                     {% endif %}
+                {% endif %}
+
+                {% if field.is_secret %}
+                    <small class="form-text text-muted"><i class="zmdi zmdi-eye-off"></i> Your response to this question is <b>secret</b> until you get accepted.</small>
                 {% endif %}
             </div>
         {% endfor %}

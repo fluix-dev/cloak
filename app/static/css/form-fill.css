@@ -51,17 +51,23 @@ small.form-text.text-muted {
 	margin: 10px 0;
 }
 
+.cloak-num {
+	max-width: 100px;
+}
+
 .form-group:not(*:first-of-type) {
 	margin-top:25px;
 }
 
-select option {
-	display: inline;
+select, select option {
+	display: inline !important;
+	max-width:90% !important;
+	width: auto !important;
 }
-
+/*
 select {
 	display: inline !important;
-}
+}*/
 
 /*.cloak-input >option:checked,*/
 /*

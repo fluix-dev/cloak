@@ -15,11 +15,20 @@ a{
     text-decoration: none;
 }
 
+hr{
+    z-index: 20 !important;
+    color: white !important;
+}
+
+html{
+    overflow-x: hidden !important;
+}
+
 .bod{
     background-color: var(--mid-purple);
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 .topbar {
@@ -45,23 +54,18 @@ a{
 
 .land {
     margin-bottom: 150px;
-    overflow: hidden;
 }
 
 .land .bkgd {
+    
     max-height: 525px;
     min-width: 100%;
     position: absolute;
     z-index: -10;
-    overflow: hidden;
-    /*left: -15vw;*/
-    /*left: -5px;*/
     top: 40px;
     left: -9999px;
     right: -9999px;
     margin:auto;
-    /*object-fit: cover;*/
-    /*object-position: 0 0;*/
 }
 
 .logo {
@@ -81,9 +85,8 @@ a{
 .login {
     text-decoration: none;
     
-	font-family: 'Roboto', sans-serif;
-/*    font-weight: 300px;*/
-	font-size: 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
 	color: var(--bright-purple);
 	align-items: center;
 	display:inline-block;
@@ -131,9 +134,9 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
 }
 
 
-.tagline{
-    overflow: hidden;
-}
+/*.tagline{*/
+/*    overflow: hidden;*/
+/*}*/
 
 .whit{
     background-color: #FFF;
@@ -197,8 +200,9 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
     margin-top: 525px;
     left: 0px;
     width: 400;
-    height: 500px;
+    height: 370px;
     background-color: var(--red-purple);
+    margin-bottom: 10px;
 }
 
 .features .thumbnail-par{
@@ -246,9 +250,160 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
     
     color: var(--yello);
     width: 100%;
-/*    text-align: right;*/
 
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+}
+
+
+
+
+.howitworks{
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 1445px;
+    width: 100%;
+    height: 720px;
+    background-color: white;
+    color: var(--yello);
+}
+
+.howitworks .headerText{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-weight: 700;
+    font-size: 5vw;
+    color: var(--mid-purple);
+}
+
+.howitworks .sec{
+    display: inline-flex;*/
+    flex-direction: row;
+}
+
+.howitworks .txt{
+    max-width: 50vw;
+    margin-top: 4.5vw;
+    margin-left: 50px;
+    color: #777;
+    text-align: right;
+}
+
+.howitworks .txt-inv{
+    max-width: 50vw;
+    margin-top: 4.5vw;
+    margin-right: 50px;
+    color: #777;
+    text-align: left;
+}
+
+.howitworks .thumbn{
+    max-width: 40vw;
+    max-height: 40vh;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+
+
+
+
+.footernotes{
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 2150px;
+    width: 100vw;
+    height: 100px;
+    background-color: var(--yello);
+    z-index: 50;
+}
+
+.footernotes .notice{
+    text-align: center;
+    margin-top: 38px;
+    
+    color: #555;
+    width: 83vw;
+    font-weight: 100;
+    
+    text-decoration: none;
+}
+
+.footernotes .githublogo{
+    opacity: 0.70;
+    position: absolute;
+    right: 10vw;
+    top: 30px;
+    width: 40px;
+    height: 40px;
+}
+
+.bold-link{
+    text-decoration: none;
+    color: var(--bright-purple);
+    font-weight: 700;
+}
+
+.bold-link:hover{
+    text-decoration: none;
+    color: var(--dark-purple);
+}
+
+.topCloud{
+    position: absolute;
+    z-index: 100;
+    
+    left: 100vw;
+    top: 0px;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    animation-duration: 2.5s;
+    animation-name: topC;
+}
+
+.botCloud{
+    position: absolute;
+    z-index: 99;
+    
+    right: 100vw;
+    top: 0px;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    animation-duration: 2.5s;
+    animation-name: botC;
+}
+
+@keyframes topC {
+    from {
+        left: 0px;
+    }
+    
+    15% {
+        left: 0px;
+    }
+    
+    to {
+        left: 100vw;
+    }
+}
+
+@keyframes botC {
+    from {
+        right: 0px;
+    }
+    
+    35% {
+        right: 0px;
+    }
+    
+    to {
+        right: 100vw;
+    }
 }

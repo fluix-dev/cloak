@@ -92,7 +92,8 @@ class Form(models.Model):
 
 @receiver(pre_save, sender=Form)
 def generate_form_id(sender, instance, **kwargs):
-    instance.form_id = secrets.token_urlsafe(64)
+    if not instance.form_id:
+        instance.form_id = secrets.token_urlsafe(64)
 
 
 class FormField(models.Model):

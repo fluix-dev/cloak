@@ -27,6 +27,9 @@
         {% for field in form.fields.all %}
             <div class="form-group">
                 <label for="{{ field.pk }}">{{ field.question }}</label>
+                {% if field.description %} 
+                    <small class="form-text text-muted">{{ field.description }}</small>
+                {% endif %}
                 {% if field.input_type == 'S' %}
                     <input type="text" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
                 {% elif field.input_type == 'L' %}
@@ -39,10 +42,6 @@
                     </select>                
                 {% elif field.input_type == 'N' %}
                     <input type="number" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
-                {% endif %}
-
-                {% if field.description %} 
-                    <small class="form-text text-muted">{{ field.description }}</small>
                 {% endif %}
             </div>
         {% endfor %}

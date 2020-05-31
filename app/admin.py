@@ -1,4 +1,5 @@
 from .models import Form, FormField, Response, FormFieldResponse
+from .utils import gen_braille
 
 from adminsortable2.admin import SortableInlineAdminMixin
 from django.contrib import admin
@@ -112,17 +113,17 @@ class ResponseAdmin(admin.ModelAdmin):
     )
 
     def user_hidden(self, obj):
-        return "[SECRET]" if obj.status != "A" else obj.user
+        return gen_braille() if obj.status != "A" else obj.user
 
     user_hidden.short_description = "User"
 
     def name_hidden(self, obj):
-        return "[SECRET]" if obj.status != "A" else obj.name
+        return gen_braille() if obj.status != "A" else obj.name
 
     name_hidden.short_description = "Name"
 
     def email_hidden(self, obj):
-        return "[SECRET]" if obj.status != "A" else obj.email
+        return gen_braille() if obj.status != "A" else obj.email
 
     email_hidden.short_description = "Email"
 

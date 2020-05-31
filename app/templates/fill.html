@@ -15,6 +15,8 @@
                 <label class="cloak-label" for="{{ field.pk }}">{{ field.question }}</label>
                 {% if field.description %} 
                     <small class="form-text text-muted">{{ field.description }}</small>
+                {% else %}
+                    <br>
                 {% endif %}
 
                 {% if field.input_type == 'S' %}

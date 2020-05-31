@@ -55,13 +55,15 @@ small.form-text.text-muted {
 	margin-top:25px;
 }
 
-select option {
-	display: inline;
+select, select option {
+	display: inline !important;
+	max-width:90% !important;
+	width: auto !important;
 }
-
+/*
 select {
 	display: inline !important;
-}
+}*/
 
 /*.cloak-input >option:checked,*/
 /*

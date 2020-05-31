@@ -1,6 +1,7 @@
 from . import views
 
-from django.urls import path
+from django.urls import path, include
+from django_registration.backends.one_step.views import RegistrationView
 
 urlpatterns = [
     path("", views.index, name="index"),
@@ -12,6 +13,15 @@ urlpatterns = [
         views.submitted,
         name="submitted",
     ),
+
+    path(
+        "accounts/register/",
+        RegistrationView.as_view(success_url="/admin/"),
+        name="django_registration_register",
+    ),
+    path("accounts/", include("django_registration.backends.one_step.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
+
     path("debug/400/", views.debug_400),
     path("debug/403/", views.debug_403),
     path("debug/500/", views.debug_500),

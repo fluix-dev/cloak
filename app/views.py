@@ -70,3 +70,7 @@ def public_forms(request):
         "forms" : Form.objects.filter(is_public=False)
     }
     return render(request,"public.html",context)
+
+
+def register(request):
+    return render(request, "register.html")

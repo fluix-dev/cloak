@@ -1,7 +1,7 @@
 import secrets
 import uuid
 
-from django.contrib.auth.models import User
+from django.contrib.auth.models import Group, User
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models.signals import pre_save
@@ -9,6 +9,7 @@ from django.dispatch import receiver
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import escape, mark_safe
+from django_registration.signals import user_registered
 from summa.summarizer import summarize
 
 
@@ -243,3 +244,10 @@ class FormFieldResponse(models.Model):
 
     def __str__(self):
         return self.form_field.question
+
+
+@receiver(user_registered)
+def make_creator(sender, user, request, **kwargs):
+    user.is_staff = True
+    user.groups.add(Group.objects.get(name="Creators"))
+    user.save()

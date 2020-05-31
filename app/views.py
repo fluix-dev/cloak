@@ -75,7 +75,7 @@ def public_api(request):
 
 
 def public_api(request):
-    pub_forms = Form.objects.filter(is_public=False)
+    pub_forms = Form.objects.filter(is_public=True)
     resp = {
         "length" : len(pub_forms),
         "forms" : [

@@ -74,15 +74,6 @@ def public_api(request):
     pub_forms = Form.objects.filter(is_public=True)
     resp = {
         "length": len(pub_forms),
-        "forms": {form.get_absolute_url(): form.name for form in pub_forms},
-    }
-    return JsonResponse(resp)
-
-
-def public_api(request):
-    pub_forms = Form.objects.filter(is_public=True)
-    resp = {
-        "length": len(pub_forms),
         "forms": [
             {
                 "uuid": form.uuid,

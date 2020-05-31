@@ -73,7 +73,11 @@ class Form(models.Model):
     )
 
     def clean(self):
-        if self.is_open and self.close_datetime <= timezone.now():
+        if (
+            self.is_open
+            and self.close_datetime
+            and self.close_datetime <= timezone.now()
+        ):
             raise ValidationError("Auto-Close Date must be in the future.")
 
     def __str__(self):
@@ -124,6 +128,7 @@ class FormField(models.Model):
     description = models.TextField(
         verbose_name="Description",
         max_length=1024,
+        blank=True,
         help_text="A description that will be shown under the question in "
         + "smaller text.",
     )
@@ -135,13 +140,17 @@ class FormField(models.Model):
         + "per line. This field will be ignored for fields that aren't "
         + "Multiple Choice ones.",
     )
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    class Meta(object):
+        ordering = ["order"]
 
     @property
     def get_choices(self):
         return self.multiple_choices.split("\n")
 
     def __str__(self):
-        return self.question
+        return "Form Field"
 
 
 class Response(models.Model):

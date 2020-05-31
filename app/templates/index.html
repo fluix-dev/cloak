@@ -2,22 +2,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
-	<link rel="icon" type="image/png" href="{% static 'img/cloak-favicon.png' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="{% static 'img/cloak-favicon.png' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body class="no-select">
-<header>
-	<img class="logo no-select" src="{% static 'img/cloakLogo.png' %}" draggable="false"/>
-	<a class="login no-select" href="{% url 'admin:index' %}">LOGIN</a> 
-</header>
-<section class="land">
-	<img class="bkgd no-select" src="{% static 'img/cloudPattern.png' %}" draggable="false"/>
-	<div class="logo-cntr">
-		<img class="logo-text no-select" src="{% static 'img/cloak-words.png' %}" draggable="false"/>
-	</div>
-</section>
+<body class="bod no-select">
+    <div class="topbar">
+        <img class="logo no-select" src="{% static 'img/cloakLogo.png' %}" draggable="false">
+        <a class="login no-select" href="{% url 'admin:index' %}">LOGIN</a>
+    </div>
+    <div class="sect land">
+        <img class="bkgd no-select" src="{% static 'img/cloudPattern.png' %}" draggable="false">
+        <div class="logo-cntr">
+            <img class="logo-text no-select" src="{% static 'img/cloak-words.png' %}" draggable="false"/>
+        </div>
+    </div>
 
+    <div class="sect tagline">
+        <img class="backg-image" src="{% static 'img/test.png' %}" draggable="false">
+        <img class="outline-image" src="{% static 'img/cloak-outline.png' %}" draggable="false">
+
+        <p class="tag">A HIRING PLATFORM THAT REMOVES
+        <br/>
+        BIAS FROM THE EQUATION</p>
+    </div>
 </body>
 </html>

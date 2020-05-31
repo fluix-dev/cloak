@@ -10,15 +10,18 @@
 	--dark-purple: #21002A;
 }
 
-
-body {
-	background-color: var(--mid-purple);
-	overflow-x:hidden;
-	font-family: 'Roboto', sans-serif;
-	margin: 0;
+a{
+    text-decoration: none;
 }
 
-header {
+.bod{
+    background-color: var(--mid-purple);
+    overflow-x:hidden;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.topbar {
 	font-family: 'Open Sans', sans-serif;
 
 	display: flex;
@@ -28,7 +31,7 @@ header {
 	margin: 25px;
 }
 
-section {
+.sect {
 	width: 100%;
 	display: inline-flex;
 }
@@ -74,7 +77,9 @@ section {
 }
 
 .login {
-	font-family: sans-serif;
+    text-decoration: none;
+    
+	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
 	color: var(--bright-purple);
 	align-items: center;
@@ -85,6 +90,8 @@ section {
 }
 
 a.login:before {
+    text-decoration: none;
+    
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -94,25 +101,69 @@ a.login:before {
 	background-color: var(--bright-purple);
 	visibility: hidden;
 	transform: scaleX(0);
-	transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 a.login:hover:before {
+    text-decoration: none;
+    background-color: var(--bright-purple);
+    
 	visibility: visible;
 	transform: scaleX(1);
 }
 
-a.login:link {}
+a.login:link { text-decoration: none; color: var(--bright-purple); }
 
-a.login:visited {}
+a.login:visited { text-decoration: none; color: var(--bright-purple); }
 
-a.login:hover {}
+a.login:hover { text-decoration: none; color: var(--bright-purple); }
 
-a.login:active {}
+a.login:active { text-decoration: none; color: var(--bright-purple); }
 
 .no-select {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.tagline .backg-image{
+    display: inline;
+    z-index -2;
+    opacity: 0.3;
+    margin-top:15px;
+
+    max-height: 525px;
+    min-width: 100%;
+    position: absolute;
+    z-index: -10;
+    overflow: hidden;
+    left: -9999px;
+    right: -9999px;
+    margin:auto;
+}
+
+.tagline .outline-image{
+    display: inline;
+    z-index: 0;
+    margin-top:15px;
+    
+    max-height: 525px;
+    min-width: 100%;
+    position: absolute;
+    z-index: -10;
+    overflow: hidden;
+    left: -9999px;
+    right: -9999px;
+    margin:auto;
+}
+
+.tagline .tag{
+    z-index: 1;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--bright-purple);
+    font-size: 40px;
+    margin: 0px;
 }

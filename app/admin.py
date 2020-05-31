@@ -1,16 +1,21 @@
 from .models import Form, FormField, Response, FormFieldResponse
 
+from adminsortable2.admin import SortableInlineAdminMixin
 from django.contrib import admin
 
 
-class FormFieldInline(admin.StackedInline):
+class FormFieldInline(SortableInlineAdminMixin, admin.StackedInline):
     model = FormField
     extra = 0
+    verbose_name = "Click and drag to change order ::"
+    verbose_name_plural = ""
+    name = ""
     fieldsets = (
         (
             None,
             {
                 "fields": (
+                    "order",
                     ("input_type", "question"),
                     ("is_required", "is_secret"),
                 ),

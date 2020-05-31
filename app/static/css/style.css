@@ -45,6 +45,8 @@ html{
 .sect {
 	width: 100%;
 	display: inline-flex;
+    overflow:auto;
+    height:max-content;
 }
 
 .logo-cntr {
@@ -92,6 +94,9 @@ html{
     max-height:100px;
     height:auto;
 }
+
+.topbar > a.login {
+    /*display:flex;*/
 }
 
 .login {
@@ -141,13 +146,12 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 }
 
 
-/*.tagline{*/
-/*    overflow: hidden;*/
-/*}*/
+/* tagline section */
 
 .whit{
     background-color: #FFF;
-    height: 525px;
+    /*height: 525px;*/
+    height: 100%;
     min-width: 100%;
     position: absolute;
     z-index: -30;
@@ -158,6 +162,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 .tagline {
     margin: auto;
     font-family: 'Roboto', sans-serif;
+    height: 525px;
 }
 
 .backg-image, .outline-image {
@@ -193,29 +198,40 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 }
     
 .tagline-div {
-    display: inline-flex;
-    flex-direction: column;
+    /*display: inline-flex;*/
+    /*flex-direction: column;*/
     margin: auto;
-    padding-top: 250px;
+    /*padding-top: 250px;*/
+
+    /*center-aligns better*/
+    padding-top: 60px;
 }
 
 
-
+/* features sections */
 
 .features{
-    position: absolute;
-    margin-top: 525px;
-    left: 0px;
+    /*position: absolute;*/
+    /*margin-top: 525px;*/
+    /*left: 0px;*/
     width: 100%;
-    height: 700px;
+    /*height: 700px;*/
     background-color: var(--red-purple);
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
+    /*padding-top:50px;*/
+    /*padding-bottom:50px;*/
+
+    padding: 50px;
+
+    flex-direction: row;
+    align-items: center;
 }
 
 .features .thumbnail-par{
-    width: 50vw;
-    padding: 50px;
-    padding-top: 80px;
+    /*max-width: 50vw;*/
+    /*padding: 50px;*/
+    /*padding-top:0;*/
+    /*padding-top: 80px;*/
 /*    */
 /*    display: inline-flex;*/
 /*    flex-direction: row-reverse;*/
@@ -224,11 +240,12 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 .features .thumbnail{
     max-height: 300px;
     width: auto;
-    max-width: 40vw;
+    max-width: 50vw;
 }
 
 .features .txt{
     max-width: 50vw;
+    margin-left:25px;
 }
 
 .features .catchline{
@@ -241,7 +258,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     
     padding-left: 20px;
     padding-right: 80px;
-    margin-top: 90px;
+    /*margin-top: 90px;*/
 }
 
 .features .smol-line{
@@ -261,26 +278,29 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+
+    margin-bottom: 0;
 }
 
 
-
+/* how it works section */
 
 .howitworks{
     font-family: 'Roboto', sans-serif;
-    position: absolute;
-    top: 1520px;
+    /*position: absolute;*/
+    /*top: 1520px;*/
     font-weight: 200;
     width: 100%;
 /*    height: 850px;*/
     background-color: white;
     color: var(--yello);
+    padding: 40px 70px;
 }
 
 .howitworks .headerText{
     font-family: 'Open Sans', sans-serif;
-    margin-top: 70px;
-    margin-left: 70px;
+    /*margin-top: 70px;*/
+    /*margin-left: 70px;*/
     font-weight: 700;
     font-size: 5vw;
     color: var(--mid-purple);
@@ -290,35 +310,69 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     display: inline-flex;
     flex-direction: row;
     align-items: center;
+    /*margin: 4.5vw;*/
+
+    /*margin-left: 70px;*/
+    /*margin-right: 70px;*/
+    /*margin: 4.5vw 70px;*/
+    margin: 4.5vw 0;
+    margin-bottom: 0;
+}
+
+.howitworks .sec:last-of-type {
+    /*margin-bottom: 4.5vw;*/
 }
 
 .howitworks .txt{
     max-width: 50vw;
-    margin-top: 4.5vw;
-    margin-left: 50px;
+    /*margin-top: 4.5vw;*/
+    /*margin-left: 50px;*/
     color: #777;
     text-align: right;
+    margin-bottom: 0;
+}
+
+.txt {
+    font-size: 1.2em !important;
 }
 
 .howitworks .txt-inv{
-    max-width: 50vw;
-    margin-top: 4.5vw;
-    margin-right: 50px;
-    color: #777;
-    text-align: left;
+    /*max-width: 50vw;*/
+    /*margin-top: 4.5vw;*/
+    /*margin-right: 50px;*/
+    /*color: #777;*/
+    /*text-align: left;*/
 }
 
 .howitworks .thumbn{
     max-width: 40vw;
-    max-height: 40vh;
-    margin-left: 40px;
-    margin-right: 40px;
+    /*max-height: 40vh;*/
+    /*margin-left: 40px;*/
+    /*margin-right: 40px;*/
 }
 
+/* relative to the image */
+.sec.right {
 
+}
 
+.sec.left {
 
+}
 
+.sec.left img,
+.sec.right .txt {
+    float: left;
+    text-align: right;
+}
+
+.sec.right img, 
+.sec.left .txt {
+    float: right;
+    text-align: left;
+}
+
+/* footnotes */
 
 .footernotes{
     font-family: 'Roboto', sans-serif;
@@ -412,5 +466,74 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     }
     to {
         right: 100vw;
+    }
+}
+
+
+
+@media (max-width:400px) {
+    .login.logo {
+        display:none;
+    }
+}
+
+@media (max-width:600px) {
+    .tagline .tag {
+        font-size: 5vw;
+    }
+    .outline-image {
+
+    }
+}
+
+@media screen and (max-width: 950px) { 
+    .txt {
+        font-size: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 715px) {
+    .howitworks .txt {
+        width: 100%;
+        text-align: center !important;
+        max-width: 100vw !important;
+    }
+
+    .howitworks img {
+        max-width: 100%;
+    }
+
+    .sec.right {
+        flex-direction: column-reverse;
+    }
+
+    .sec.left {
+        flex-direction: column;
+    }
+
+    .sec.left, .sec.right {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .features {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .features .txt {
+        max-width: 100vw;
+        margin-left:0;
+        margin-top: 25px;
+    }
+
+    .features .thumbnail {
+        max-width: 60vw;
+    }
+
+    .catchline, .headerText {
+        font-size: 2em !important;
     }
 }

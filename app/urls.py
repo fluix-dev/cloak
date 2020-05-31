@@ -12,6 +12,8 @@ urlpatterns = [
         views.submitted,
         name="submitted",
     ),
+    path("api/forms/public/", views.public_api),
+    path("api/form/<uuid:uuid>/<str:form_id>/", views.form_api),
     path("debug/400/", views.debug_400),
     path("debug/403/", views.debug_403),
     path("debug/500/", views.debug_500),

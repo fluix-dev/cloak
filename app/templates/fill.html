@@ -37,7 +37,7 @@
                 {% elif field.input_type == 'M' %}
                     <select class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
                         {% for opt in field.get_choices %}
-                            <option>{{ opt }}</option>
+                        <option value="{{ opt }}">{{ opt }}</option>
                         {% endfor %}
                     </select>                
                 {% elif field.input_type == 'N' %}

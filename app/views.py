@@ -13,3 +13,6 @@ def fill(request, uuid, form_id):
 
 def submit(request, uuid, form_id):
     pass
+def submitted(request, uuid, form_id):
+    context = {"form_name" : Form.objects.get(uuid=uuid,form_id=form_id).name, "uuid" : uuid, "form_id": form_id}
+    return render(request,"submitted.html",context)

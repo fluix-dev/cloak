@@ -4,10 +4,11 @@
 /* colour variables */
 :root {
 	--dark-gray: #231E23;
-	--yellow: #FFF9C9;
+	--yello: #FFF9C9;
 	--bright-purple: #662D91;
 	--mid-purple: #34004A;
 	--dark-purple: #21002A;
+    --red-purple: #35003F;
 }
 
 a{
@@ -16,7 +17,6 @@ a{
 
 .bod{
     background-color: var(--mid-purple);
-    overflow-x:hidden;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     overflow-x: hidden;
@@ -45,6 +45,7 @@ a{
 
 .land {
     margin-bottom: 150px;
+    overflow: hidden;
 }
 
 .land .bkgd {
@@ -81,6 +82,7 @@ a{
     text-decoration: none;
     
 	font-family: 'Roboto', sans-serif;
+/*    font-weight: 300px;*/
 	font-size: 25px;
 	color: var(--bright-purple);
 	align-items: center;
@@ -126,6 +128,11 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+
+.tagline{
+    overflow: hidden;
 }
 
 .whit{
@@ -174,10 +181,74 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
     margin: 0px;
     margin: auto;
 }
-
+    
 .tagline-div {
     display: inline-flex;
     flex-direction: column;
     margin: auto;
-    padding-top: 230px;
+    padding-top: 250px;
+}
+
+
+
+
+.features{
+    position: absolute;
+    margin-top: 525px;
+    left: 0px;
+    width: 400;
+    height: 500px;
+    background-color: var(--red-purple);
+}
+
+.features .thumbnail-par{
+    width: 50vw;
+    padding: 50px;
+    padding-top: 80px;
+/*    */
+/*    display: inline-flex;*/
+/*    flex-direction: row-reverse;*/
+}
+
+.features .thumbnail{
+    max-height: 300px;
+    width: auto;
+    max-width: 40vw;
+}
+
+.features .txt{
+    max-width: 50vw;
+}
+
+.features .catchline{
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+   
+    color: #FFF;
+    font-size: 3.5vw;
+    text-align: left;
+    
+    padding-left: 20px;
+    padding-right: 80px;
+    margin-top: 90px;
+}
+
+.features .smol-line{
+    width: 60px;
+    height: 6px;
+    background-color: var(--yello);
+    margin-left: 20px;
+    margin-bottom: 6px;
+}
+
+.features .descrip{
+    font-family: 'Roboto', sans-serif;
+    
+    color: var(--yello);
+    width: 100%;
+/*    text-align: right;*/
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
 }

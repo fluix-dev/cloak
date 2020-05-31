@@ -19,6 +19,7 @@ a{
     overflow-x:hidden;
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .topbar {
@@ -127,32 +128,37 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
 	user-select: none;
 }
 
+.whit{
+    background-color: #FFF;
+    height: 525px;
+    min-width: 100%;
+    position: absolute;
+    z-index: -3;
+    
+    margin-top:0px;
+}
+
 .tagline .backg-image{
-    display: inline;
     z-index: -2;
-    opacity: 0.3;
-    margin-top:15px;
+    opacity: 0.15;
+    margin-top: 15px;
 
     max-height: 525px;
     min-width: 100%;
     position: absolute;
-    z-index: -10;
-    overflow: hidden;
     left: -9999px;
     right: -9999px;
     margin:auto;
 }
 
 .tagline .outline-image{
-    display: inline;
     z-index: 0;
-    margin-top:15px;
+    margin-top: 15px;
+    z-index: -1;
     
     max-height: 525px;
     min-width: 100%;
     position: absolute;
-    z-index: -10;
-    overflow: hidden;
     left: -9999px;
     right: -9999px;
     margin:auto;
@@ -164,13 +170,14 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: var(--bright-purple);
-    font-size: 40px;
-    /*margin: 0px;*/
+    font-size: 3vw;
+    margin: 0px;
     margin: auto;
 }
 
 .tagline-div {
-    display:inline-flex;
+    display: inline-flex;
     flex-direction: column;
-    margin:auto;
+    margin: auto;
+    padding-top: 230px;
 }

@@ -23,6 +23,7 @@ body {
 	color:white;
 	background-color: var(--bright-purple);
 	transition: background-color 0.2s ease-out;
+	margin-top: 10px;
 }
 
 #cloak-btn:hover {
@@ -33,6 +34,33 @@ body {
 .cloak-input:focus {
 	border-color: rgba(102, 45, 145,.2) !important;
 	box-shadow: 0 0 0 0.2rem rgba(102, 45, 145,0.2) !important;
+}
+
+.cloak-label {
+	margin: 0;
+	margin-bottom: 0;
+	font-size: 1.2rem;
+}
+
+small.form-text.text-muted {
+	margin: 0;
+	margin-top: 3px;
+}
+
+.cloak-input {
+	margin: 10px 0;
+}
+
+.form-group:not(*:first-of-type) {
+	margin-top:25px;
+}
+
+select option {
+	display: inline;
+}
+
+select {
+	display: inline !important;
 }
 
 /*.cloak-input >option:checked,*/

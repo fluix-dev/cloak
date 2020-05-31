@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ form.name }} | Cloak</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/form-fill.css' %}" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="{% static 'img/cloak-favicon.png' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="topbar">
+    <a href="{% url 'index' %}"><img class="logo no-select" src="{% static 'img/cloakLogo.png' %}" draggable="false"/></a>
+    <!-- <span class="login no-select white">CLOAK</span>  -->
+</div>
+<div class="form-body container">
+    <h1>{{ form.name }}</h1>
+    {% if form.description %}
+        <p>{{ form.description }}</p>
+    {% endif %}
+    <hr>
+    <form action="{% url 'submit' form.uuid form.form_id %}" method="post">
+    {% csrf_token %}
+    {% if form.fields %}
+        {% for field in form.fields.all %}
+            <div class="form-group">
+                <label for="{{ field.pk }}">{{ field.question }}</label>
+                {% if field.description %} 
+                    <small class="form-text text-muted">{{ field.description }}</small>
+                {% endif %}
+                {% if field.input_type == 'S' %}
+                    <input type="text" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
+                {% elif field.input_type == 'L' %}
+                    <textarea class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" rows="3"></textarea>
+                {% elif field.input_type == 'M' %}
+                    <select class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
+                        {% for opt in field.get_choices %}
+                        <option value="{{ opt }}">{{ opt }}</option>
+                        {% endfor %}
+                    </select>                
+                {% elif field.input_type == 'N' %}
+                    <input type="number" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <input type="submit" class="btn" id="cloak-btn">
+    </form>
+
+    <!-- todo : change colour -->
+</div>
+
+</body>
+</html>

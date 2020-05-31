@@ -1,0 +1,55 @@
+.form-body {
+	background-color: white;
+	margin: 40px;
+	padding: 30px;
+	border-radius: 7px;
+}
+
+.topbar {
+	margin: 40px;
+}
+
+body {
+    background-color: var(--dark-purple) !important;
+
+}
+
+/*
+.white {
+	color: white;
+}*/
+
+#cloak-btn {
+	color:white;
+	background-color: var(--bright-purple);
+	transition: background-color 0.2s ease-out;
+}
+
+#cloak-btn:hover {
+	background-color: var(--dark-purple);
+	transition: background-color 0.2s ease-out;
+}
+
+.cloak-input:focus {
+	border-color: rgba(102, 45, 145,.2) !important;
+	box-shadow: 0 0 0 0.2rem rgba(102, 45, 145,0.2) !important;
+}
+
+/*.cloak-input >option:checked,*/
+/*
+.cloak-input > option:hover,
+.cloak-input >option:focus,
+.cloak-input >option:active {
+	background-color: var(--bright-purple) !important;
+	background: var(--bright-purple) !important;
+	outline-color: var(--bright-purple) !important;
+	color:white !important;
+	box-shadow: 0 0 10px 100px var(--bright-purple) inset;
+}
+*/
+
+*::-moz-selection,
+*::selection {
+	background-color: rgba(102, 45, 145,0.75) !important;
+	color:white;
+}

@@ -60,6 +60,6 @@ def submitted(request, uuid, form_id):
 
 def public_forms(request):
     context = {
-        "forms" : Form.objects.filter(is_public=False)
+        "forms" : Form.objects.filter(is_public=True)
     }
     return render(request,"public.html",context)

@@ -145,6 +145,10 @@ class FormField(models.Model):
     class Meta(object):
         ordering = ["order"]
 
+    @property
+    def get_choices(self):
+        return self.multiple_choices.split("\n")
+
     def __str__(self):
         return "Form Field"
 

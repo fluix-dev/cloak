@@ -129,7 +129,7 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
 
 .tagline .backg-image{
     display: inline;
-    z-index -2;
+    z-index: -2;
     opacity: 0.3;
     margin-top:15px;
 
@@ -165,5 +165,12 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
     font-weight: 500;
     color: var(--bright-purple);
     font-size: 40px;
-    margin: 0px;
+    /*margin: 0px;*/
+    margin: auto;
+}
+
+.tagline-div {
+    display:inline-flex;
+    flex-direction: column;
+    margin:auto;
 }

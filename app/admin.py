@@ -106,13 +106,6 @@ class FormFieldResponse(admin.StackedInline):
 @admin.register(Response)
 class ResponseAdmin(admin.ModelAdmin):
     date_hierarchy = "submission_datetime"
-    search_fields = [
-        "response_num",
-        "form",
-        "user_hidden",
-        "name_hidden",
-        "email_hidden",
-    ]
     list_display = (
         "response_num",
         "form",

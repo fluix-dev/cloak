@@ -1,0 +1,12 @@
+{% extends 'base_error.html' %}
+
+{% load static %}
+
+{% block body %}
+    <title>Cloak | Page Not Found</title>
+    <img src="{% static 'img/404.svg' %}" width=100% style="padding-bottom: 20px;">
+    <h5>Oh no, you're lost in the <b style="color: #662D91;">Void</b> &mdash;
+      a place that doesn't exist. Perhaps your address is slightly off,
+      or you want to go back <a class="bold-link" href="{% url 'index' %}">
+      Home</a> to reorient yourself.</h5>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base_error.html' %}
+
+{% load static %}
+
+{% block body %}
+    <title>Cloak | Server Error</title>
+    <img src="{% static 'img/500.svg' %}" width=100% style="padding-bottom: 20px;">
+    <h5>Oh no, something's gone terribly wrong with <b style="color: #662D91;">
+        Cloak</b>. But not to worry, our engineers are on it. For now, you may
+        want to go back <a class="bold-link" href="{% url 'index' %}">Home</a>
+        to reorient yourself.</h5>
+{% endblock %}

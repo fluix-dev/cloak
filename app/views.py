@@ -1,3 +1,5 @@
+from django.core.exceptions import PermissionDenied, SuspiciousOperation
+from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 
 from app.models import Form
@@ -13,3 +15,21 @@ def fill(request, uuid, form_id):
 
 def submit(request, uuid, form_id):
     pass
+
+
+def debug_400(request):
+    if request.user.is_superuser:
+        raise SuspiciousOperation("Debugging...")
+    raise Http404()
+
+
+def debug_403(request):
+    if request.user.is_superuser:
+        raise PermissionDenied()
+    raise Http404()
+
+
+def debug_500(request):
+    if request.user.is_superuser:
+        raise Exception()
+    raise Http404()

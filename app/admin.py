@@ -28,6 +28,11 @@ class FormFieldInline(SortableInlineAdminMixin, admin.StackedInline):
         ),
     )
 
+    def get_readonly_fields(self, request, obj):
+        if obj:
+            return ["is_secret"]
+        return []
+
 
 @admin.register(Form)
 class FormAdmin(admin.ModelAdmin):
@@ -125,6 +130,8 @@ class ResponseAdmin(admin.ModelAdmin):
         readonly_fields = [
             "submission_datetime",
         ]
+        if not request.user.is_superuser:
+            readonly_fields += ["form", "user", "name", "email"]
         if obj and obj.status == "A":
             readonly_fields += ["status"]
         return readonly_fields

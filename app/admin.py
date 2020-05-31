@@ -105,12 +105,19 @@ class FormFieldResponse(admin.StackedInline):
 @admin.register(Response)
 class ResponseAdmin(admin.ModelAdmin):
     list_display = (
+        "response_num",
         "form",
         "user_hidden",
         "name_hidden",
         "email_hidden",
+        "status",
         "submission_datetime",
     )
+
+    def response_num(self, obj):
+        return "%010d" % obj.id
+
+    response_num.short_description = "Response ID"
 
     def user_hidden(self, obj):
         return gen_braille() if obj.status != "A" else obj.user
@@ -130,6 +137,9 @@ class ResponseAdmin(admin.ModelAdmin):
     def get_readonly_fields(self, request, obj):
         readonly_fields = [
             "submission_datetime",
+            "user_hidden",
+            "name_hidden",
+            "email_hidden",
         ]
         if not request.user.is_superuser:
             readonly_fields += ["form", "user", "name", "email"]
@@ -138,10 +148,17 @@ class ResponseAdmin(admin.ModelAdmin):
         return readonly_fields
 
     fieldsets = (
-        ("Connections", {"fields": ("form", "user",),},),
+        ("Connections", {"fields": ("form", "user_hidden",),},),
         (
             "Response",
-            {"fields": ("name", "email", "submission_datetime", "status",),},
+            {
+                "fields": (
+                    "name_hidden",
+                    "email_hidden",
+                    "submission_datetime",
+                    "status",
+                ),
+            },
         ),
     )
 

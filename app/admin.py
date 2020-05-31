@@ -92,15 +92,31 @@ class FormAdmin(admin.ModelAdmin):
 
 class FormFieldResponse(admin.StackedInline):
     model = FormFieldResponse
+    verbose_name = ""
     extra = 0
-    readonly_fields = ["question"]
-    fields = (
-        "question",
-        "content",
-    )
 
-    def question(self, obj):
-        return obj.form_field.question
+    def get_readonly_fields(self, request, obj):
+        readonly_fields = ["summary", "question"]
+        if not request.user.is_superuser:
+            readonly_fields += ["content"]
+        return readonly_fields
+
+    def get_fields(self, request, obj=None):
+        fields = ["summary"]
+        if request.GET.get("full", False):
+            fields[0] = "content"
+        if request.user.is_superuser:
+            fields.insert(0, "form_field")
+
+        """
+        fieldsets[0][1]["fields"] = fields
+        if obj and getattr(obj, "form_field").input_type == "L":
+            fieldsets += (
+                "Summary",
+                {"fields": ("summary",), "classes": ("collapse",)},
+            )
+        print(fieldsets[0][1]["fields"])"""
+        return fields
 
 
 @admin.register(Response)

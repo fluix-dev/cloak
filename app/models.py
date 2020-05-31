@@ -8,6 +8,8 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.html import escape, mark_safe
+from summa.summarizer import summarize
 
 
 class Form(models.Model):
@@ -225,6 +227,18 @@ class FormFieldResponse(models.Model):
 
     def parse_content():
         pass
+
+    @property
+    def summary(self, recursive=False):
+        if self.form_field.input_type != "L":
+            return self.content
+        return mark_safe(
+            "<b>Long answer summarized in 100 words:<br><br></b>"
+            + '%s <br><br><a href="?full=True">View Full</a>'
+            % escape(summarize(self.content, words=100))
+        )
+
+    summary.fget.short_description = "Test"
 
     def __str__(self):
         return self.form_field.question

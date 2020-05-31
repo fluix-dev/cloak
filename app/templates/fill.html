@@ -19,21 +19,21 @@
 
                 {% if field.input_type == 'S' %}
                     {% if field.is_required %}
-                        <input type="text" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" maxlength="8191" required>
+                        <input type="text" class="form-control cloak-input" name="{{ field.pk }}" maxlength="8191" required>
                     {% else %}
-                        <input type="text" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" maxlength="8191">
+                        <input type="text" class="form-control cloak-input" name="{{ field.pk }}" maxlength="8191">
                     {% endif %}
                 {% elif field.input_type == 'L' %}
                     {% if field.is_required %}
-                        <textarea class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" rows="3" maxlength="8191" required></textarea>
+                        <textarea class="form-control cloak-input" name="{{ field.pk }}" rows="3" maxlength="8191" required></textarea>
                     {% else %}
-                        <textarea class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" rows="3" maxlength="8191"></textarea>
+                        <textarea class="form-control cloak-input" name="{{ field.pk }}" rows="3" maxlength="8191"></textarea>
                     {% endif %}
                 {% elif field.input_type == 'M' %}
                     {% if field.is_required %}
-                        <select class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" required>
+                        <select class="form-control cloak-input" name="{{ field.pk }}" required>
                     {% else %}
-                        <select class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
+                        <select class="form-control cloak-input" name="{{ field.pk }}">
                     {% endif %}
                         {% for opt in field.get_choices %}
                         <option value="{{ opt }}">{{ opt }}</option>
@@ -41,9 +41,9 @@
                     </select>                
                 {% elif field.input_type == 'N' %}
                     {% if field.is_required %}
-                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" max="1000000" min="-1000000" required>
+                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" max="1000000" min="-1000000" required>
                     {% else %}
-                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" max="1000000" min="-1000000" >
+                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" max="1000000" min="-1000000" >
                     {% endif %}
                 {% endif %}
             </div>

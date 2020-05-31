@@ -37,6 +37,7 @@ class FormFieldInline(SortableInlineAdminMixin, admin.StackedInline):
 
 @admin.register(Form)
 class FormAdmin(admin.ModelAdmin):
+    search_fields = ["name", "description"]
     list_display = ("name", "description_truncate", "is_open", "close_datetime")
 
     def description_truncate(self, obj):
@@ -104,6 +105,14 @@ class FormFieldResponse(admin.StackedInline):
 
 @admin.register(Response)
 class ResponseAdmin(admin.ModelAdmin):
+    date_hierarchy = "submission_datetime"
+    search_fields = [
+        "response_num",
+        "form",
+        "user_hidden",
+        "name_hidden",
+        "email_hidden",
+    ]
     list_display = (
         "response_num",
         "form",

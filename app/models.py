@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
+from django.urls import reverse
 from django.utils import timezone
 
 
@@ -79,6 +80,9 @@ class Form(models.Model):
             and self.close_datetime <= timezone.now()
         ):
             raise ValidationError("Auto-Close Date must be in the future.")
+
+    def get_absolute_url(self):
+        return reverse("fill", args=[self.uuid, self.form_id])
 
     def __str__(self):
         return self.name

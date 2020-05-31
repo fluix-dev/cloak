@@ -5,8 +5,9 @@
 {% block body %}
     <title>Cloak | Forbidden</title>
     <img src="{% static 'img/403.svg' %}" width=50% style="padding-bottom: 20px;">
-    <h5>Hey! You shouldn't be here. If you're having trouble accessing an
-      <b style="color: #662D91;">Admin</b> page, make sure you've been added as
-      an editor or reviewer. Or you could just go back <a class="bold-link"
-      href="{% url 'index' %}">Home</a>.</h5>
+    <h5>Hey! You shouldn't be here. This could be because the form you are
+      trying to access has closed. On the other hand, if you're having trouble
+      accessing an <b style="color: #662D91;">Admin</b> page, make sure you've
+      been added as an editor or reviewer. Or you could just go back
+      <a class="bold-link" href="{% url 'index' %}">Home</a>.</h5>
 {% endblock %}

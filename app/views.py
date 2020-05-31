@@ -3,6 +3,7 @@ from app.models import Form, FormFieldResponse, Response
 from django.core.exceptions import PermissionDenied, SuspiciousOperation
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render, redirect
+from django.utils import timezone
 
 
 # Create your views here.
@@ -30,6 +31,12 @@ def debug_500(request):
 
 def fill(request, uuid, form_id):
     form = get_object_or_404(Form, uuid=uuid, form_id=form_id)
+    if not form.is_open:
+        raise PermissionDenied()
+    if form.close_datetime and form.close_datetime < timezone.now():
+        form.is_open = False
+        form.save()
+        raise PermissionDenied()
     context = {"form": form}
     return render(request, "fill.html", context)
 

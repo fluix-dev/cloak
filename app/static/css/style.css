@@ -71,16 +71,27 @@ html{
 .logo {
 	height: 50px;
 	width: 70px;
-    margin-right: 45vw;
+    /*margin-right: 45vw;*/
+    flex-basis:3;
+}
+
+.login.logo {
+    flex-grow: 2;
+    height:auto;
 }
 
 .logo-text {
 	align-self: center;
 	align-content: center;
 	margin: auto;
-	height: 100px;
+	/*height: 100px;*/
 	display:inherit;
 	z-index: 10;
+
+    max-width: 85vw;
+    max-height:100px;
+    height:auto;
+}
 }
 
 .login {
@@ -88,12 +99,12 @@ html{
     
 	font-family: 'Open Sans', sans-serif;
 	font-size: 22px;
-	color: var(--bright-purple);
+	color: var(--yello);
 	align-items: center;
 	display:inline-block;
 	position:relative;
 	text-decoration-line: none;
-	padding: 5px;
+	padding: 5px 10px;
 }
 
 small a:before, a.login:before {
@@ -105,7 +116,7 @@ small a:before, a.login:before {
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background-color: var(--bright-purple);
+    background-color: var(--yello);
 	visibility: hidden;
 	transform: scaleX(0);
     transition: all 0.2s ease-in-out;
@@ -113,13 +124,13 @@ small a:before, a.login:before {
 
 small a:hover:before,a.login:hover:before {
     text-decoration: none;
-    background-color: var(--bright-purple);
+    background-color: var(--yello);
     
 	visibility: visible;
 	transform: scaleX(1);
 }
 
-a.login:link, a.login:visited, a.login:hover, a.login:active,
+a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: none; color: var(--yello); }
 small a:link, small a:visited, small a:hover, small a:active { text-decoration: none; color: var(--bright-purple); }
 
 .no-select {

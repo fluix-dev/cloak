@@ -11,7 +11,9 @@
 </head>
 <body class="bod no-select">
     <div class="topbar">
-        <img class="logo no-select" src="{% static 'img/cloakLogo.png' %}" draggable="false">
+        <span class="login logo">
+            <img class="logo no-select" src="{% static 'img/cloakLogo.png' %}" draggable="false">
+        </span>
         <a class="login no-select" href="{% url 'public' %}">FORMS</a>
         <a class="login no-select" href="{% url 'django_registration_register' %}">REGISTER</a>
         <a class="login no-select" href="{% url 'admin:index' %}">LOGIN</a>

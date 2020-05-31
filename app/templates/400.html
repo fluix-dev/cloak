@@ -1,0 +1,12 @@
+{% extends 'base_error.html' %}
+
+{% load static %}
+
+{% block body %}
+    <title>Cloak | Bad Request</title>
+    <img src="{% static 'img/400.svg' %}" width=100% style="padding-bottom: 20px;">
+    <h5>Messing about with HTTP Methods are you!? Or a little
+      <b style="color: #662D91;">Glitch</b> happened. Feel free to try again or
+      go back to the <a class="bold-link" href="{% url 'index' %}">Home</a>
+      page.</h5>
+{% endblock %}

@@ -20,7 +20,7 @@
     {% if form.description %}
         <p>{{ form.description }}</p>
     {% endif %}
-
+    <hr>
     <form action="{% url 'submit' form.uuid form.form_id %}" method="post">
     {% csrf_token %}
     {% if form.fields %}

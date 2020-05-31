@@ -71,6 +71,7 @@ html{
 .logo {
 	height: 50px;
 	width: 70px;
+    margin-right: 45vw;
 }
 
 .logo-text {
@@ -144,6 +145,7 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
 
 .tagline {
     margin: auto;
+    font-family: 'Roboto', sans-serif;
 }
 
 .backg-image, .outline-image {
@@ -316,7 +318,6 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
 
 .footernotes .notice{
     text-align: center;
-    margin-top: 38px;
     padding-top: 38px;
     color: #555;
     width: 83vw;

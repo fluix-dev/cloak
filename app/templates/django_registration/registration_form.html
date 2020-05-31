@@ -1,7 +1,7 @@
 {% extends "admin/base_site.html" %}
 {% load i18n static %}
 
-{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 {{ form.media }}
 {% endblock %}
 
@@ -53,6 +53,8 @@
   <div class="form-row">
     {{ form.email.errors }}
     {{ form.email.label_tag }} {{ form.email }}
+    <small><i class="zmdi zmdi-email-open"></i> Don't worry, we won't send
+      anything for the hackathon. Feel free to use test@test.test</small>
   </div>
   <div class="form-row">
     {{ form.password1.errors }}

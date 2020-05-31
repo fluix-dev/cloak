@@ -137,7 +137,7 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
     height: 525px;
     min-width: 100%;
     position: absolute;
-    z-index: -3;
+    z-index: -30;
     
     margin-top:0px;
 }
@@ -154,6 +154,7 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
     max-height: 525px;
     min-width: 100%;
     margin-top: 15px;
+    margin: auto;
 }
 
 .tagline .backg-image{
@@ -172,6 +173,9 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
     font-weight: 500;
     color: var(--bright-purple);
     font-size: 3vw;
+    
+    margin: 0px;
+    margin: auto;
 }
     
 .tagline-div {
@@ -344,6 +348,7 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
 }
 
 .bold-link:hover{
+    text-decoration: none;
     color: var(--dark-purple);
 }
 

@@ -118,13 +118,7 @@ a.login:hover:before {
 	transform: scaleX(1);
 }
 
-a.login:link { text-decoration: none; color: var(--bright-purple); }
-
-a.login:visited { text-decoration: none; color: var(--bright-purple); }
-
-a.login:hover { text-decoration: none; color: var(--bright-purple); }
-
-a.login:active { text-decoration: none; color: var(--bright-purple); }
+a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: none; color: var(--bright-purple); }
 
 .no-select {
 	-moz-user-select: none;

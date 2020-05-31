@@ -142,30 +142,27 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
     margin-top:0px;
 }
 
-.tagline .backg-image{
-    z-index: -2;
-    opacity: 0.15;
-    margin-top: 15px;
+.tagline {
+    margin: auto;
+}
 
-    max-height: 525px;
-    min-width: 100%;
+.backg-image, .outline-image {
     position: absolute;
     left: -9999px;
     right: -9999px;
-    margin:auto;
-}
-
-.tagline .outline-image{
-    z-index: 0;
-    margin-top: 15px;
-    z-index: -1;
     
     max-height: 525px;
     min-width: 100%;
-    position: absolute;
-    left: -9999px;
-    right: -9999px;
-    margin:auto;
+    margin-top: 15px;
+}
+
+.tagline .backg-image{
+    z-index: -2;
+    opacity: 0.15;
+}
+
+.tagline .outline-image{
+    z-index: -1;
 }
 
 .tagline .tag{
@@ -175,8 +172,6 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
     font-weight: 500;
     color: var(--bright-purple);
     font-size: 3vw;
-    margin: 0px;
-    margin: auto;
 }
     
 .tagline-div {
@@ -349,7 +344,6 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
 }
 
 .bold-link:hover{
-    text-decoration: none;
     color: var(--dark-purple);
 }
 

@@ -51,6 +51,10 @@ small.form-text.text-muted {
 	margin: 10px 0;
 }
 
+.cloak-num {
+	max-width: 100px;
+}
+
 .form-group:not(*:first-of-type) {
 	margin-top:25px;
 }

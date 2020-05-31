@@ -43,9 +43,9 @@
                     </select>                
                 {% elif field.input_type == 'N' %}
                     {% if field.is_required %}
-                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" max="1000000" min="-1000000" required>
+                        <input type="number" class="form-control cloak-input cloak-num" name="{{ field.pk }}" max="1000000" min="-1000000" required>
                     {% else %}
-                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" max="1000000" min="-1000000" >
+                        <input type="number" class="form-control cloak-input cloak-num" name="{{ field.pk }}" max="1000000" min="-1000000" >
                     {% endif %}
                 {% endif %}
             </div>

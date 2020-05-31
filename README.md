@@ -6,7 +6,6 @@
     <img alt="GitHub" src="https://img.shields.io/github/license/theaviddev/cloak">
     <a target="_blank" href="https://www.python.org/downloads/" title="Python version"><img src="https://img.shields.io/badge/python-%3E=_3.6-green.svg"></a>
     <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fcloak.theavid.dev">
-    <img alt="Libraries.io dependency status for GitHub repo" src="https://img.shields.io/librariesio/github/theaviddev/cloak">
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/theaviddev/cloak">
     <br>
     <a href="#about">About</a> | <a href="#features">Features</a> | <a href="#usage">Usage</a>

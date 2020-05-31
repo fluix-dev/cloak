@@ -13,43 +13,57 @@
 <body>
 <div class="topbar">
     <a href="{% url 'index' %}"><img class="logo no-select" src="{% static 'img/cloakLogo.png' %}" draggable="false"/></a>
-    <!-- <span class="login no-select white">CLOAK</span>  -->
-</div>
+</div> 
 <div class="form-body container">
     <h1>{{ form.name }}</h1>
     {% if form.description %}
         <p>{{ form.description }}</p>
     {% endif %}
     <hr>
-    <form action="{% url 'submit' form.uuid form.form_id %}" method="post">
+    <form action="{% url 'submit' form.uuid form.form_id %}" method="post"> 
     {% csrf_token %}
     {% if form.fields %}
         {% for field in form.fields.all %}
             <div class="form-group">
-                <label for="{{ field.pk }}">{{ field.question }}</label>
+                <label class="cloak-label" for="{{ field.pk }}">{{ field.question }}</label>
                 {% if field.description %} 
                     <small class="form-text text-muted">{{ field.description }}</small>
                 {% endif %}
+
                 {% if field.input_type == 'S' %}
-                    <input type="text" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
+                    {% if field.is_required %}
+                        <input type="text" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" maxlength="8191" required>
+                    {% else %}
+                        <input type="text" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" maxlength="8191">
+                    {% endif %}
                 {% elif field.input_type == 'L' %}
-                    <textarea class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" rows="3"></textarea>
+                    {% if field.is_required %}
+                        <textarea class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" rows="3" maxlength="8191" required></textarea>
+                    {% else %}
+                        <textarea class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" rows="3" maxlength="8191"></textarea>
+                    {% endif %}
                 {% elif field.input_type == 'M' %}
-                    <select class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
+                    {% if field.is_required %}
+                        <select class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" required>
+                    {% else %}
+                        <select class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
+                    {% endif %}
                         {% for opt in field.get_choices %}
                         <option value="{{ opt }}">{{ opt }}</option>
                         {% endfor %}
                     </select>                
                 {% elif field.input_type == 'N' %}
-                    <input type="number" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}">
+                    {% if field.is_required %}
+                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" max="1000000" min="-1000000" required>
+                    {% else %}
+                        <input type="number" class="form-control cloak-input" name="{{ field.pk }}" id="{{ field.pk }}" max="1000000" min="-1000000" >
+                    {% endif %}
                 {% endif %}
             </div>
         {% endfor %}
     {% endif %}
     <input type="submit" class="btn" id="cloak-btn">
     </form>
-
-    <!-- todo : change colour -->
 </div>
 
 </body>

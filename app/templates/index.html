@@ -21,6 +21,9 @@
             <img class="logo-text no-select" src="{% static 'img/cloak-words.png' %}" draggable="false"/>
         </div>
     </div>
+    
+    <img class="topCloud" src="{% static 'img/topClouds.png' %}" draggable="false">
+    <img class="botCloud" src="{% static 'img/botClouds.png' %}" draggable="false">
 
     <div class="sect tagline">
         <img class="backg-image" src="{% static 'img/test.png' %}" draggable="false">
@@ -33,13 +36,35 @@
     </div>
     
     <div class="sect features">
-        <div class="thumbnail-par"><img class="thumbnail" src="{% static 'img/test.png' %}"></img></div>
+        <div class="thumbnail-par"><img class="thumbnail" src="{% static 'img/test.png' %}" draggable="false"></img></div>
         <div class="txt">
             <p class="catchline"> Powerful tools, at your service</p>
             <div class="smol-line"></div>
-            <p class="descrip">NLP-powered summarization (using TextRank), flexible APIs, and custom form options help you find the perfect hire!</p>
+            <p class="descrip">TextRank NLP-powered summarization, flexible APIs, and custom form options help you find the perfect hire!</p>
         </div>
     </div>
     
+    <div class="howitworks">
+        <p class="headerText">How it works</p>
+        <div class="sec">
+            <p class="txt">The core functionality of Cloak resides in the Django open source Python web framework. It allows us to create flexible models, stored in a PostgreSQL database, without writing a single line of SQL. Through Django's admin pages, Cloak hides all personally identifiable information to remove potential bias from applications.</p>
+            <img class="thumbn" src="{% static 'img/codeReview.png' %}" draggable="false"></img>
+        </div>
+        </hr>
+        <div class="sec">
+            <img class="thumbn" src="{% static 'img/serverCluster.png' %}" draggable="false"></img>
+            <p class="txt-inv">Cloak is hosted on a dedicated server running an Nginx reverse proxy. Our fabulous domain name is provided by Namecheap with DigitalOcean acting as a nameserver and host. All traffic is secured through LetsEncrypt SSL certificates ensuring that your private data is safe.</p>
+        </div>
+    </div>
+
+    <div class="footernotes">
+        <div class="notice">
+            <span>Created by </span>
+            <a class="bold-link" href="https://github.com/TheAvidDev"><span>TheAvidDev</span></a>     <span>, </span>
+            <a class="bold-link" href="https://github.com/dulldesk"><span>dulldesk</span></a>         </span>, and </span>
+            <a class="bold-link" href="https://github.com/skyflaren"><span>skyflaren</span></a>       <span> during MasseyHacks2020</span>
+        </div>
+        <a href="https://github.com/TheAvidDev/cloak"><img class="githublogo" src="{% static 'img/github.png' %}" draggable="false"><a>
+    </div>
 </body>
 </html>

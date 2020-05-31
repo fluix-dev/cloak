@@ -1,0 +1,43 @@
+.open-text {
+	max-width: 90vw;
+	max-height:100px;
+	/*width:auto;*/
+	height:auto;
+	margin: 60px auto;
+}
+
+.topbar, .head {
+	background-color: var(--mid-purple);
+}
+
+.section {
+	display: flex;
+}
+
+.no-forms {
+	margin: 0 auto;
+	color: var(--dark-purple);
+}
+
+.forms {
+	min-height: calc(100vh - 420px);
+	background-color: white;
+	padding:50px;
+}
+
+.bod {
+	height:100vh !important;
+	background-color: white;
+}
+
+@media (max-width: 680px) {
+	.card-columns {
+		columns: 2 !important;
+	}
+}
+
+@media (max-width: 580px) {
+	.card-columns {
+		columns: 1 !important;
+	}
+}

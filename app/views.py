@@ -63,3 +63,10 @@ def submitted(request, uuid, form_id):
         "form_id": form_id,
     }
     return render(request, "submitted.html", context)
+
+
+def public_forms(request):
+    context = {
+        "forms" : Form.objects.filter(is_public=False)
+    }
+    return render(request,"public.html",context)

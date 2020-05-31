@@ -39,7 +39,7 @@ html{
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	margin: 25px;
+	padding: 25px;
 }
 
 .sect {
@@ -96,7 +96,7 @@ html{
 	padding: 5px;
 }
 
-a.login:before {
+small a:before, a.login:before {
     text-decoration: none;
     
 	content: "";
@@ -111,7 +111,7 @@ a.login:before {
     transition: all 0.2s ease-in-out;
 }
 
-a.login:hover:before {
+small a:hover:before,a.login:hover:before {
     text-decoration: none;
     background-color: var(--bright-purple);
     
@@ -119,7 +119,8 @@ a.login:hover:before {
 	transform: scaleX(1);
 }
 
-a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: none; color: var(--bright-purple); }
+a.login:link, a.login:visited, a.login:hover, a.login:active,
+small a:link, small a:visited, small a:hover, small a:active { text-decoration: none; color: var(--bright-purple); }
 
 .no-select {
 	-moz-user-select: none;
@@ -314,13 +315,18 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
     height: 100px;
     background-color: var(--yello);
     z-index: 50;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .footernotes .notice{
     text-align: center;
-    padding-top: 38px;
+    /*padding-top: 38px;*/
     color: #555;
-    width: 83vw;
+    /*width: 83vw;*/
     font-weight: 100;
     
     text-decoration: none;
@@ -328,9 +334,9 @@ a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: 
 
 .footernotes .githublogo{
     opacity: 0.70;
-    position: absolute;
-    margin-top: -30px;
-    right: 10vw;
+    /*position: absolute;*/
+    /*margin-top: -30px;*/
+    /*right: 10vw;*/
     width: 40px;
     height: 40px;
     filter: opacity(75%);

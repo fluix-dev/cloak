@@ -58,7 +58,6 @@ html{
 }
 
 .land .bkgd {
-    
     max-height: 525px;
     min-width: 100%;
     position: absolute;
@@ -119,13 +118,7 @@ a.login:hover:before {
 	transform: scaleX(1);
 }
 
-a.login:link { text-decoration: none; color: var(--bright-purple); }
-
-a.login:visited { text-decoration: none; color: var(--bright-purple); }
-
-a.login:hover { text-decoration: none; color: var(--bright-purple); }
-
-a.login:active { text-decoration: none; color: var(--bright-purple); }
+a.login:link, a.login:visited, a.login:hover, a.login:active { text-decoration: none; color: var(--bright-purple); }
 
 .no-select {
 	-moz-user-select: none;
@@ -149,30 +142,27 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
     margin-top:0px;
 }
 
-.tagline .backg-image{
-    z-index: -2;
-    opacity: 0.15;
-    margin-top: 15px;
+.tagline {
+    margin: auto;
+}
 
-    max-height: 525px;
-    min-width: 100%;
+.backg-image, .outline-image {
     position: absolute;
     left: -9999px;
     right: -9999px;
-    margin:auto;
-}
-
-.tagline .outline-image{
-    z-index: 0;
-    margin-top: 15px;
-    z-index: -1;
     
     max-height: 525px;
     min-width: 100%;
-    position: absolute;
-    left: -9999px;
-    right: -9999px;
-    margin:auto;
+    margin-top: 15px;
+}
+
+.tagline .backg-image{
+    z-index: -2;
+    opacity: 0.15;
+}
+
+.tagline .outline-image{
+    z-index: -1;
 }
 
 .tagline .tag{
@@ -182,8 +172,6 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
     font-weight: 500;
     color: var(--bright-purple);
     font-size: 3vw;
-    margin: 0px;
-    margin: auto;
 }
     
 .tagline-div {
@@ -281,7 +269,7 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
 }
 
 .howitworks .sec{
-    display: inline-flex;*/
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
 }
@@ -340,6 +328,13 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
     right: 10vw;
     width: 40px;
     height: 40px;
+    filter: opacity(75%);
+    transition: filter 0.5s ease-out;
+}
+
+.footernotes .githublogo:hover {
+    filter: opacity(1);
+    transition: filter 0.5s ease-out;
 }
 
 .bold-link{
@@ -349,31 +344,26 @@ a.login:active { text-decoration: none; color: var(--bright-purple); }
 }
 
 .bold-link:hover{
-    text-decoration: none;
     color: var(--dark-purple);
 }
 
-.topCloud{
+.cloud {
     position: absolute;
+    height: 100vh;
+    animation-duration: 2.5s;
+    width: 100vw;
+    top: 0px;
+}
+
+.topCloud{
     z-index: 100;
     left: 100vw;
-    top: 0px;
-    width: 100vw;
-    height: 100vh;
-    
-    animation-duration: 2.5s;
     animation-name: topC;
 }
 
 .botCloud{
-    position: absolute;
     z-index: 99;
     right: 100vw;
-    top: 0px;
-    width: 100vw;
-    height: 100vh;
-    
-    animation-duration: 2.5s;
     animation-name: botC;
 }
 

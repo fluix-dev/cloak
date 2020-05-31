@@ -155,7 +155,7 @@ class FormField(models.Model):
 
     @property
     def get_choices(self):
-        return self.multiple_choices.split("\n")
+        return self.multiple_choices.splitlines()
 
     def __str__(self):
         return "Form Field"

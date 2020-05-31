@@ -60,7 +60,7 @@ class FormAdmin(admin.ModelAdmin):
                     "is_open",
                     "close_datetime",
                     "is_public",
-                    "login_required",
+                    #"login_required",
                     "is_single_response",
                 ),
             },

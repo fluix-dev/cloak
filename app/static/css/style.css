@@ -95,13 +95,9 @@ html{
     height:auto;
 }
 
-.topbar > a.login {
-    /*display:flex;*/
-}
-
 .login {
     text-decoration: none;
-    
+
 	font-family: 'Open Sans', sans-serif;
 	font-size: 22px;
 	color: var(--yello);
@@ -114,7 +110,7 @@ html{
 
 small a:before, a.login:before {
     text-decoration: none;
-    
+
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -130,7 +126,7 @@ small a:before, a.login:before {
 small a:hover:before,a.login:hover:before {
     text-decoration: none;
     background-color: var(--yello);
-    
+
 	visibility: visible;
 	transform: scaleX(1);
 }
@@ -155,7 +151,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     min-width: 100%;
     position: absolute;
     z-index: -30;
-    
+
     margin-top:0px;
 }
 
@@ -169,7 +165,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     position: absolute;
     left: -9999px;
     right: -9999px;
-    
+
     max-height: 525px;
     min-width: 100%;
     margin-top: 15px;
@@ -192,11 +188,11 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     font-weight: 500;
     color: var(--bright-purple);
     font-size: 3vw;
-    
+
     margin: 0px;
     margin: auto;
 }
-    
+
 .tagline-div {
     /*display: inline-flex;*/
     /*flex-direction: column;*/
@@ -251,11 +247,11 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 .features .catchline{
     font-family: 'Open Sans', sans-serif;
     width: 100%;
-   
+
     color: #FFF;
     font-size: 3.5vw;
     text-align: left;
-    
+
     padding-left: 20px;
     padding-right: 80px;
     /*margin-top: 90px;*/
@@ -271,7 +267,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 
 .features .descrip{
     font-family: 'Roboto', sans-serif;
-    
+
     color: var(--yello);
     width: 100%;
 
@@ -366,7 +362,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     text-align: right;
 }
 
-.sec.right img, 
+.sec.right img,
 .sec.left .txt {
     float: right;
     text-align: left;
@@ -393,7 +389,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     color: #555;
     /*width: 83vw;*/
     font-weight: 100;
-    
+
     text-decoration: none;
 }
 
@@ -486,7 +482,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     }
 }
 
-@media screen and (max-width: 950px) { 
+@media screen and (max-width: 950px) {
     .txt {
         font-size: 1rem !important;
     }

@@ -194,12 +194,7 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 }
 
 .tagline-div {
-    /*display: inline-flex;*/
-    /*flex-direction: column;*/
     margin: auto;
-    /*padding-top: 250px;*/
-
-    /*center-aligns better*/
     padding-top: 60px;
 }
 
@@ -207,30 +202,12 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 /* features sections */
 
 .features{
-    /*position: absolute;*/
-    /*margin-top: 525px;*/
-    /*left: 0px;*/
     width: 100%;
-    /*height: 700px;*/
     background-color: var(--red-purple);
-    /*margin-bottom: 10px;*/
-    /*padding-top:50px;*/
-    /*padding-bottom:50px;*/
-
     padding: 50px;
 
     flex-direction: row;
     align-items: center;
-}
-
-.features .thumbnail-par{
-    /*max-width: 50vw;*/
-    /*padding: 50px;*/
-    /*padding-top:0;*/
-    /*padding-top: 80px;*/
-/*    */
-/*    display: inline-flex;*/
-/*    flex-direction: row-reverse;*/
 }
 
 .features .thumbnail{
@@ -254,7 +231,6 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 
     padding-left: 20px;
     padding-right: 80px;
-    /*margin-top: 90px;*/
 }
 
 .features .smol-line{
@@ -283,11 +259,8 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 
 .howitworks{
     font-family: 'Roboto', sans-serif;
-    /*position: absolute;*/
-    /*top: 1520px;*/
     font-weight: 200;
     width: 100%;
-/*    height: 850px;*/
     background-color: white;
     color: var(--yello);
     padding: 40px 70px;
@@ -295,8 +268,6 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 
 .howitworks .headerText{
     font-family: 'Open Sans', sans-serif;
-    /*margin-top: 70px;*/
-    /*margin-left: 70px;*/
     font-weight: 700;
     font-size: 5vw;
     color: var(--mid-purple);
@@ -306,23 +277,12 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    /*margin: 4.5vw;*/
-
-    /*margin-left: 70px;*/
-    /*margin-right: 70px;*/
-    /*margin: 4.5vw 70px;*/
     margin: 4.5vw 0;
     margin-bottom: 0;
 }
 
-.howitworks .sec:last-of-type {
-    /*margin-bottom: 4.5vw;*/
-}
-
 .howitworks .txt{
     max-width: 50vw;
-    /*margin-top: 4.5vw;*/
-    /*margin-left: 50px;*/
     color: #777;
     text-align: right;
     margin-bottom: 0;
@@ -332,29 +292,11 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
     font-size: 1.2em !important;
 }
 
-.howitworks .txt-inv{
-    /*max-width: 50vw;*/
-    /*margin-top: 4.5vw;*/
-    /*margin-right: 50px;*/
-    /*color: #777;*/
-    /*text-align: left;*/
-}
-
 .howitworks .thumbn{
     max-width: 40vw;
-    /*max-height: 40vh;*/
-    /*margin-left: 40px;*/
-    /*margin-right: 40px;*/
 }
 
 /* relative to the image */
-.sec.right {
-
-}
-
-.sec.left {
-
-}
 
 .sec.left img,
 .sec.right .txt {
@@ -385,19 +327,13 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 
 .footernotes .notice{
     text-align: center;
-    /*padding-top: 38px;*/
     color: #555;
-    /*width: 83vw;*/
     font-weight: 100;
 
     text-decoration: none;
 }
 
 .footernotes .githublogo{
-    opacity: 0.70;
-    /*position: absolute;*/
-    /*margin-top: -30px;*/
-    /*right: 10vw;*/
     width: 40px;
     height: 40px;
     filter: opacity(75%);
@@ -476,9 +412,6 @@ small a:link, small a:visited, small a:hover, small a:active { text-decoration: 
 @media (max-width:600px) {
     .tagline .tag {
         font-size: 5vw;
-    }
-    .outline-image {
-
     }
 }
 

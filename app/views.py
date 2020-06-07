@@ -43,7 +43,7 @@ def fill(request, uuid, form_id):
 
 def submit(request, uuid, form_id):
     form = get_object_or_404(Form, uuid=uuid, form_id=form_id)
-    resp = Response(form=form, name="thing", email="aaaaa@gmail.com")
+    resp = Response(form=form, name="John Doe", email="john@doe.com")
     # name=request.POST["name"],
     # email=request.POST["email"],
     resp.save()

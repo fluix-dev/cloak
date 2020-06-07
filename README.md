@@ -6,7 +6,6 @@
     <img alt="GitHub" src="https://img.shields.io/github/license/theaviddev/cloak">
     <a target="_blank" href="https://www.python.org/downloads/" title="Python version"><img src="https://img.shields.io/badge/python-%3E=_3.6-green.svg"></a>
     <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fcloak.theavid.dev">
-    <img alt="Libraries.io dependency status for GitHub repo" src="https://img.shields.io/librariesio/github/theaviddev/cloak">
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/theaviddev/cloak">
     <br>
     <a href="#about">About</a> | <a href="#features">Features</a> | <a href="#usage">Usage</a>
@@ -43,3 +42,77 @@ Each form field or question also has the following parameters:
  - **Multiple Choice Choices** - One choice per line for each of the multiple choice options. Only applicable to Multiple Choice input types.
 
 Finally, once you are done customizing your form, hit **Save and continue editing**. Then, click **View on Site** to view the form and get the link to send out to applications. And that's it! You've created a form with Cloak and can have the peace of mind that at least some bias is removed from your application process.
+
+## JSON API
+The API currently has the following endpoints that return data:
+ - `/api/forms/public/` Returns a list of all the public forms, along with their `uuid`, `form_id`, and absolute url path after the domain. An example is shown below:
+```json
+$ curl https://cloak.theavid.dev/api/forms/public/ | jq
+
+{
+  "length": 3,
+  "forms": [
+    {
+      "uuid": "f3d43289-6844-4829-93ce-1cb4b4c3f6e1",
+      "form_id": "3gCSZMsdjBfiEQGJnkKROIh2CsMWq24fHz9Sr0-wJsBjDBCc8Hp8rP78PLfLPkaoBMB9vQ6MyhTot6_mlY6egg",
+      "url": "/form/f3d43289-6844-4829-93ce-1cb4b4c3f6e1/3gCSZMsdjBfiEQGJnkKROIh2CsMWq24fHz9Sr0-wJsBjDBCc8Hp8rP78PLfLPkaoBMB9vQ6MyhTot6_mlY6egg/"
+    },
+    {
+      "uuid": "62a02da2-cff4-4c54-9461-2a7b74a352f1",
+      "form_id": "MeNq5Ph6qV3HXUSMZaB0vvM9xADDlUwTfDW5QsrY_7_4XXiImv6DOk6W9k-kM-MmjxrVf5UUfqOZMmaOPPEtgA",
+      "url": "/form/62a02da2-cff4-4c54-9461-2a7b74a352f1/MeNq5Ph6qV3HXUSMZaB0vvM9xADDlUwTfDW5QsrY_7_4XXiImv6DOk6W9k-kM-MmjxrVf5UUfqOZMmaOPPEtgA/"
+    },
+    {
+      "uuid": "51f85302-ef89-4d38-9135-8fd5dbbe9110",
+      "form_id": "QCQ2jteXaiplqrKpNW_5nNFaKcwuMPwojCxUUbg_OeEbjbno8Aw8riPxO31TUUqbejHtf8l0h9upQJLmgOFHIg",
+      "url": "/form/51f85302-ef89-4d38-9135-8fd5dbbe9110/QCQ2jteXaiplqrKpNW_5nNFaKcwuMPwojCxUUbg_OeEbjbno8Aw8riPxO31TUUqbejHtf8l0h9upQJLmgOFHIg/"
+    }
+  ]
+}
+```
+ - `/api/form/<uuid>/<form_id>` Returns a single form's properties, including all of its fields. An example is shown below:
+```json
+$  curl https://cloak.theavid.dev/api/form/f3d43289-6844-4829-93ce-1cb4b4c3f6e1/3gCSZMsdjBfiEQGJnkKROIh2CsMWq24fHz9Sr0-wJsBjDBCc8Hp8rP78PLfLPkaoBMB9vQ6MyhTot6_mlY6egg/ | jq 
+
+{
+  "name": "Club Presidents Club Application",
+  "description": "Thank you for displaying interest in joining the Club Presidents Club! Please fill out the form below to get a chance at one of the coveted executive spots. Don't worry, your personal details will be completely secret to any reviewers until, and only when, you have been accepted.",
+  "fields": [
+    {
+      "question": "What grade are you in?",
+      "description": "",
+      "input_type": "N",
+      "choices": [],
+      "is_secret": false,
+      "is_required": true
+    },
+    {
+      "question": "What spot are you applying for?",
+      "description": "",
+      "input_type": "M",
+      "choices": [
+        "Executive",
+        "Vice President",
+        "President"
+      ],
+      "is_secret": false,
+      "is_required": true
+    },
+    {
+      "question": "What is your shirt size",
+      "description": "We'd love to send you a shirt if you get accepted :D",
+      "input_type": "S",
+      "choices": [],
+      "is_secret": true,
+      "is_required": true
+    },
+    {
+      "question": "Please explain why you'd like to be in this club:",
+      "description": "",
+      "input_type": "L",
+      "choices": [],
+      "is_secret": false,
+      "is_required": true
+    }
+  ]
+}```
